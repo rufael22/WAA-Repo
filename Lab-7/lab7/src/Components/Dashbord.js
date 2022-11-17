@@ -18,7 +18,7 @@ const Dashbord = () => {
 
     const changeTitle = () => {
         const copyPosts = [...posts]
-        copyPosts[0].title = title
+        copyPosts[1].title = title
         setPosts(copyPosts)
         // setPosts()
     }
