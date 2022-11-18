@@ -18,7 +18,7 @@ const Dashboard = () => {
 
 
     const fetchData = () => {
-        axios.get('http://localhost:8070/api/v1/posts')
+        axios.get('http://localhost:8080/api/v1/posts')
             .then(response => {
                 setPostState(response.data)
             })
@@ -37,9 +37,9 @@ const selectHandler = (id)=>{
 // Delete posts by id
 
 const deleteHandler = (id)=>{
-    axios.delete(`http://localhost:8070/api/v1/posts/delete/${id}`)
+    axios.delete(`http://localhost:8080/api/v1/posts/delete/${id}`)
     .then(()=>{
-        setPostState(postState.filter(p=>p.id != id))
+        setPostState(postState.filter(p=>p.id !== id))
         setSelectedId(null)
     })
 }
